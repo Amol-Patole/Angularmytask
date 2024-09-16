@@ -1,0 +1,79 @@
+<div>
+    <h1>Structural Directives</h1>
+    <p> * ngif and * ngfor</p>
+</div>
+
+<div class="div21">
+    <div *ngIf="isvisible" class="rowpt-1" style="border: 1px solid black; width: 150px; background-color: red;">
+        <h4>Div1</h4>
+    </div>
+
+    <div *ngIf="isvisible2" class="rowpt-1"  style="border: 1px solid black ; width :150px; background-color: green">
+        <h4>Div2</h4>
+    </div>
+    <div *ngIf="num1 == num2" class="rowpt-1" style="border: 1px solid black ; width :150px;background-color: grey ">
+        <h4>Div3</h4>
+    </div>
+
+    <div *ngIf="isselected == 'USA' "  class="rowpt-1" style="border: 1px solid black ; width :150px;background-color: blue ">
+        <h4>Div4</h4>
+    </div>
+</div>
+<div class="btnnn">
+<div class="butn">
+    <button (click)="ishide()">Hide</button>
+    <button (click)="isshow()">SHow</button>
+</div>
+
+<button (click)="istoogle()">Toogle</button>
+
+<input type="text" value="Num-1" [(ngModel)] ="num1" />
+<input type="text" value="Num-2" [(ngModel)] ="num2"/>
+<select [(ngModel)]="isselected">
+    <option value="India">India</option>
+    <option value="China">China</option>
+    <option value="USA">USA</option>
+</select>
+</div>
+
+
+<div>
+    <ul>
+        <li *ngFor="let city of cityArray">{{city}}</li>
+    </ul>
+</div>
+<select>
+    <option *ngFor="let city of cityArray" >
+        {{city}}
+    </option>
+
+</select>
+<select>
+    <option *ngFor="let stu of stud" [value]="stu.stud1">{{stu.name}}</option>
+</select>
+
+<div class="row">
+    <div class="col-5">
+        <table>
+            <thead>
+           <tr>
+            <th>Srno</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+           </tr> 
+        </thead>
+        <tbody>
+            <tr *ngFor="let stu of stud;let Srno= index ">
+                <td>{{Srno}}</td>
+                <td>{{stu.name}}</td>
+                <td>{{stu.city}}</td>
+                <td>
+                    <span *ngIf="stu.isActive">Active</span>
+                    <span *ngIf="!stu.isActive">Deactive</span>
+                    </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
