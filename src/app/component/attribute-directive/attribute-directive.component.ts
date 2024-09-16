@@ -11,6 +11,8 @@ export class AttributeDirectiveComponent {
 
   isdivbgcolor:string='bg-primary';
 
+  isactivecolor:boolean=false;
+
   isred()
   {
     this.isdivbgcolor='bg-danger'
@@ -19,6 +21,11 @@ export class AttributeDirectiveComponent {
   isblue()
   {
     this.isdivbgcolor='bg-primary'
+  }
+
+  istoogle()
+  {
+    this.isactivecolor =!this.isactivecolor
   }
 
 }

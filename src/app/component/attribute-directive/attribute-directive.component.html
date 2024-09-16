@@ -5,3 +5,9 @@
 
 <button (click)="isred()">Red</button>
 <button (click)="isblue()">Blue</button>
+
+
+<div>
+    <h2 [ngClass]="isactivecolor == true ? 'bg-success' : 'bg-warning'">div2</h2>
+</div>
+<button (click)="istoogle()">Toogle</button>
