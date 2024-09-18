@@ -1,0 +1,21 @@
+@if (iddivvisible) {
+    <div class="Div1" style="border: 1px solid black;">
+    <h1>Div1</h1>
+    </div>
+    }
+    
+    <button (click)="hide()">Hide</button>
+    <button (click)="show()">Show</button>
+    
+    @if (iswarningvisible) {
+    <div class="Div2 text-center bg-warning" style="border: 1px solid black;">
+        <h1>Div2 warning</h1>
+        </div>
+    }
+    @else {
+    
+    <div class="Div2 text-center bg-success" style="border: 1px solid black;">
+            <h1>Div2 Sucess</h1>
+    </div>
+    }
+    <button (click)="toogle()">Toogle</button>
