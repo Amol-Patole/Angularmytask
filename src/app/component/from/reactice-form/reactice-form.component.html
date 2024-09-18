@@ -1,0 +1,57 @@
+<div><h1 style="border: 1px solid black; width: 150px height 150px; background-color: gray;">Reactive Form </h1></div>
+<form [formGroup]="studentform">
+    <div class="form-row">
+      <div class="col-7">
+        <label>Firstname</label>
+        <input type="text" class="form-control" formControlName="firstname" placeholder="Firstname">
+      </div>
+      <div class="text-danger">
+        @if(studentform.controls['firstname'].touched||studentform.controls['firstname'].dirty &&studentform.controls['firstname'].errors?.['required'])
+        {
+            <span>This is required</span>
+        }
+        @else if(studentform.controls['firstname'].touched||studentform.controls['firstname'].dirty && studentform.controls['firstname'].errors?.['minlength'])
+        {
+            <span>The textt must be min 3 character</span>
+        }
+      </div>
+      <div class="col">
+        <label>Lastname</label>
+        <input type="text" class="form-control" formControlName="lastname"  placeholder="lastname">
+      </div>
+      <div class="col">
+        <label>Username</label>
+        <input type="text" class="form-control" formControlName="email"  placeholder="Username">
+      </div>
+      <div class="bg-danger">
+        @if(studentform.controls['email'].touched || studentform.controls['email'].dirty && studentform.controls['email'].errors?.['email'])
+        {
+            <span>Email is required </span>
+        }
+      </div>
+      <div class="col">
+        <label>City</label>
+        <input type="text" class="form-control"  formControlName="city" placeholder="City">
+      </div>
+      <div class="col">
+        <label>Zip Code</label>
+        <input type="text" class="form-control" formControlName="zip" placeholder="zip">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" name="state" class="form-control" formControlName="state">
+          <option selected>Choose...</option>
+          <option>Maharashtra</option>
+          <option>Goa</option>
+          <option>MP</option>
+        </select>
+      </div>
+    </div>
+  </form>
+
+  <div>
+    {{savedata|json}}
+  </div>
+
+  <button (click)="letssubmit()" [disabled]="studentform.invalid">Submit</button>
+  <button (click)="letreset()">Reset</button>

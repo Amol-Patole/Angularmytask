@@ -1,0 +1,37 @@
+<div class="mt2 p-2 bg-secondary">
+    <h4>Pipe in Angular</h4>
+    <h3>Default Pipe and Custoom Pipe</h3>
+</div>
+<div class="row">
+    <div class="col-3">
+        Orignal Pipe {{firstname}}
+        <br/>
+        After Pipe {{firstname | uppercase}}
+    </div>
+<div class="row">
+    <div class="col-3">
+        Orignal Pipe {{firstname}}
+        <br/>
+        After Pipe {{firstname | lowercase}}
+    </div>
+
+   <div class="row">
+        <div class="col-3">
+            Orignal Pipe {{firstname}}
+            <br/>
+            After Pipe {{firstname| titlecase}}
+        </div>
+
+    <div class="row">
+        <div class="col-3">
+            Orignal Pipe {{currentTime}}
+                <br/>
+            After Pipe {{currentTime|async}}
+        </div>
+        <div class="col-3">
+            Original Pipe: {{ student.state }}
+            <br />
+            After Pipe (NA): {{ student.state | na }}
+        </div>
+
+</div>

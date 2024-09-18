@@ -5,6 +5,9 @@ import { DirectiveStructuralComponent } from './component/directive-structural/d
 import { DatabindingComponent } from './component/databinding/databinding.component';
 import { AttributeDirectiveComponent } from './component/attribute-directive/attribute-directive.component';
 import { IfElseComponent } from './control-statemnt/if-else/if-else.component';
+import { PipeComponent } from './control-statemnt/pipe/pipe.component';
+import { TemplateComponent } from './component/from/template/template.component';
+import { ReacticeFormComponent } from './component/from/reactice-form/reactice-form.component';
 
 export const routes: Routes = [
     {
@@ -32,6 +35,19 @@ export const routes: Routes = [
     {
         path:'if',
         component:IfElseComponent
+    },
+    {
+        path:'pipe',
+        component:PipeComponent
+    },
+
+    {
+        path:'form',
+        component:TemplateComponent
+    },
+    {
+        path:'r-form',
+        component:ReacticeFormComponent
     }
 
 ];
