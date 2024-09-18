@@ -12,10 +12,33 @@
 <div>
     <button (click)="getallcustomer()">GetCustomer</button>
 </div>
-<div>
+<!-- <div>
     <select>
         @for (item of customer; track $index) {
-            <option >{{ite}}</option>
+            <option>{{item.password}}</option>
         }
     </select>
-</div>
+</div> -->
+
+<div class="row"></div>
+    <div class="col-5">
+        <table>
+            <thead>
+           <tr>
+            <th>Srno</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+           </tr> 
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of customer">
+                <td>{{ item.userId }}</td>
+                <td>{{ item.userName }}</td>
+                <td>{{ item.emailId }}</td> 
+                <td>{{ item.role }}</td> 
+            </tr>
+        </tbody>
+                
+        </table>
+        </div>
