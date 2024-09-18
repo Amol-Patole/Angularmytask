@@ -1,0 +1,21 @@
+<div class="col2">
+    <button (click)="getalluser()">Get-User</button>
+</div>
+<div class="form-select">
+    <select>
+        @for (item of userlist; track $index) {
+        <option> {{item.name}}</option>    
+        }
+    </select>
+</div>
+
+<div>
+    <button (click)="getallcustomer()">GetCustomer</button>
+</div>
+<div>
+    <select>
+        @for (item of customer; track $index) {
+            <option >{{ite}}</option>
+        }
+    </select>
+</div>

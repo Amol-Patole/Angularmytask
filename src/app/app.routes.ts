@@ -8,6 +8,7 @@ import { IfElseComponent } from './control-statemnt/if-else/if-else.component';
 import { PipeComponent } from './control-statemnt/pipe/pipe.component';
 import { TemplateComponent } from './component/from/template/template.component';
 import { ReacticeFormComponent } from './component/from/reactice-form/reactice-form.component';
+import { GetApiComponent } from './component/get-api/get-api.component';
 
 export const routes: Routes = [
     {
@@ -48,6 +49,10 @@ export const routes: Routes = [
     {
         path:'r-form',
         component:ReacticeFormComponent
+    },
+    {
+        path:'get-api',
+        component:GetApiComponent
     }
 
 ];
