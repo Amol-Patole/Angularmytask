@@ -9,50 +9,75 @@ import { PipeComponent } from './control-statemnt/pipe/pipe.component';
 import { TemplateComponent } from './component/from/template/template.component';
 import { ReacticeFormComponent } from './component/from/reactice-form/reactice-form.component';
 import { GetApiComponent } from './component/get-api/get-api.component';
+import { PostApiComponent } from './post-api/post-api.component';
+import { LoginComponent } from './component/login/login.component';
+import { LayoutComponent } from './component/layout/layout.component';
 
 export const routes: Routes = [
+
     {
-        path:'Add-Employee',
-        component:AddemployeeComponent
+        path:'',
+        redirectTo:'login',
+        pathMatch:'full'
     },
 
     {
-        path:'emp-list',
-        component:EmployeelistComponent
-
-    },
-    {
-        path:'direc-struc',
-        component:DirectiveStructuralComponent
-    },
-    {
-        path:'data-bind',
-        component:DatabindingComponent
-    },
-    {
-        path:'attri-direc',
-        component:AttributeDirectiveComponent
-    },
-    {
-        path:'if',
-        component:IfElseComponent
-    },
-    {
-        path:'pipe',
-        component:PipeComponent
+        path:'login',
+        component:LoginComponent
     },
 
     {
-        path:'form',
-        component:TemplateComponent
+        path:'',
+        component:LayoutComponent,
+        children:[
+
+            {
+                path:'emp-list',
+                component:EmployeelistComponent
+        
+            },
+            {
+                path:'direc-struc',
+                component:DirectiveStructuralComponent
+            },
+            {
+                path:'data-bind',
+                component:DatabindingComponent
+            },
+            {
+                path:'attri-direc',
+                component:AttributeDirectiveComponent
+            },
+            {
+                path:'if',
+                component:IfElseComponent
+            },
+            {
+                path:'pipe',
+                component:PipeComponent
+            },
+        
+            {
+                path:'form',
+                component:TemplateComponent
+            },
+            {
+                path:'r-form',
+                component:ReacticeFormComponent
+            },
+            {
+                path:'get-api',
+                component:GetApiComponent
+            },
+            {
+                path:'post-api',
+                component:PostApiComponent
+            }
+        
+
+        ]
     },
-    {
-        path:'r-form',
-        component:ReacticeFormComponent
-    },
-    {
-        path:'get-api',
-        component:GetApiComponent
-    }
+
+    
 
 ];

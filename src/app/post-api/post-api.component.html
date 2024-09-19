@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <title>Post API - Department List</title> -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    h1 {
+      background-color: green;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .form-section {
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+    .button-group button {
+      padding: 10px 20px;
+      border: none;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+    }
+    .button-group button.reset {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create Department, Department List</h1>
+    <div>
+      <app-alert [alerttype]="'Warning'" [message]="'This is the Post page'"></app-alert> 
+    </div>
+    <h2>Department List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Sr No</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of userlist; track $index) {
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{item.departmentName}}</td>
+            <td>{{item.departmentLogo}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="onedit(item)">Edit</button>
+                <!-- <button class="btn btn-danger" (click)="ondelete(item.departmentId)">Delete</button> -->
+                 <app-button (btnclick)="ondelete(item.departmentId)" [btnclass]="'btn btn-danger'" [btntext]="'Delete'" > </app-button>
+            </td>
+        </tr>
+    }
+      </tbody>
+    </table>
+    
+    <div class="form-section">
+      <h2>New Department</h2>
+      <div class="form-group">
+        <label for="departmentName">Department Name</label>
+        <input type="text" [(ngModel)]="getobj.departmentName" id="departmentName" placeholder="Enter Name">
+      </div>
+      <div class="form-group">
+        <label for="departmentLogo">Department Logo</label>
+        <input type="text" [(ngModel)]="getobj.departmentLogo"  id="departmentLogo" placeholder="Enter Logo Url">
+      </div>
+      <div class="button-group">
+        <button type="button" class="reset" >Reset</button>
+        @if (getobj.departmentId==0) {
+            <button type="button" class="save" (click)="onsave()">Save</button>   
+        }
+        @else {
+        <button type="button" class="update" (click)="onupdate()">update</button>
+        }
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!-- http://feastmenu.neebal.com:8080/dashboard -->

@@ -1,0 +1,44 @@
+
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Animated Login Form</title> -->
+    <!-- <link rel="stylesheet" href="login.component.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
+</head>
+    <div class="container">
+        <div class="login-box">
+
+            <div class="login-name">
+                <h1>Login</h1>
+                <div class="underline-name"></div>
+            </div>
+
+            <form>
+
+                <div class="input-box">
+                    <div class="inputs">
+                        <input [(ngModel)]="userobj.username" type="text" placeholder="Enter your Username" required  name="Username">
+                        <div class="underline-input"></div>
+                    </div>
+
+                    <div class="inputs">
+                        <input [(ngModel)]="userobj.password" type="password" placeholder="Enter your Password" required name="password">
+                        <div class="underline-input"></div>
+                    </div>
+
+                    <div class="submit-button">
+                        <button (click)="login()" type="button">Submit</button>
+                    </div>
+                </div>
+                
+            </form>
+
+            <div class="text">
+                or connect with Social Media
+            </div>
+
+           
+        </div>
+    </div>
+
