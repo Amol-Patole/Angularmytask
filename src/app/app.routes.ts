@@ -12,6 +12,7 @@ import { GetApiComponent } from './component/get-api/get-api.component';
 import { PostApiComponent } from './post-api/post-api.component';
 import { LoginComponent } from './component/login/login.component';
 import { LayoutComponent } from './component/layout/layout.component';
+import { authGuard } from './service/auth.guard';
 
 export const routes: Routes = [
 
@@ -42,7 +43,8 @@ export const routes: Routes = [
             },
             {
                 path:'data-bind',
-                component:DatabindingComponent
+                component:DatabindingComponent,
+                canActivate:[authGuard],
             },
             {
                 path:'attri-direc',

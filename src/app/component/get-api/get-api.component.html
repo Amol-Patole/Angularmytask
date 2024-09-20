@@ -6,7 +6,10 @@
 <div class="form-select">
     <select>
         @for (item of userlist; track $index) {
-        <option> {{item.name}}</option>    
+        <option> {{item.id}}</option>   
+        <option> {{item.username}}</option>  
+        <option> {{item.name}}</option>  
+        <!-- <option> {{item.id}}</option>    -->
         }
     </select>
 </div>
@@ -35,10 +38,10 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of customer">
-                <td>{{ item.userId }}</td>
-                <td>{{ item.userName }}</td>
-                <td>{{ item.emailId }}</td> 
-                <td>{{ item.role }}</td> 
+                <td>{{ item.custId }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.mobile }}</td> 
+                <!-- <td>{{ item.role }}</td>  -->
             </tr>
         </tbody>
                 

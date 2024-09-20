@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { AlertComponent } from "../../resuable/alert/alert.component";
+import { Customer } from '../../class/class';
+import { Iuser } from '../../class/interface/Iuser';
 
 @Component({
   selector: 'app-get-api',
@@ -18,8 +20,8 @@ export class GetApiComponent {
   {
 
   }
-  userlist:any[]=[];
-  customer:any[]=[];
+  userlist:Iuser[]=[];
+  customer:Customer[]=[];
 
   getalluser()
   {
@@ -31,7 +33,7 @@ export class GetApiComponent {
 
   getallcustomer()
   {
-    this.http.get("https://projectapi.gerasim.in/api/RealEstate/GetAllCustomers").subscribe((result:any)=>
+    this.http.get("https://projectapi.gerasim.in/api/PropertyBookingController/GetAllCustomer").subscribe((result:any)=>
     {
       this.customer=result.data;
     })
